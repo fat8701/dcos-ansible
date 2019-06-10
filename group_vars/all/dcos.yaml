@@ -1,0 +1,30 @@
+---
+dcos:
+  download: "https://downloads.dcos.io/dcos/stable/1.12.0/dcos_generate_config.sh"
+  version: "1.12.0"
+  version_to_upgrade_from: "1.12.0"
+  # image_commit: "acc9fe548aea5b1b5b5858a4b9d2c96e07eeb9de"
+  enterprise_dcos: false
+  ip_detect_device: eth0
+  selinux_mode: permissive
+
+  config:
+    # This is a direct yaml representation of the DC/OS config.yaml
+    # Please see https://docs.mesosphere.com/1.12/installing/production/advanced-configuration/configuration-referenc
+e/
+    # for parameter reference.
+    cluster_name: "test-cluster"
+    security: strict
+    bootstrap_url: http://192.168.21.146:8080
+    exhibitor_storage_backend: static
+    master_discovery: static
+    master_list:
+      - 192.168.100.8
+    telemetry_enabled: false
+    agent_list: 
+      - 192.168.100.6
+    process_timeout: 600
+    resolvers: 
+       - 192.168.11.13
+       - 192.168.11.31
+    oauth_enabled: true
