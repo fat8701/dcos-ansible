@@ -96,6 +96,8 @@ dcos:
 | image_commit | no| Can be used to force same version / same config upgrades. Mostly useful for deploying/upgrading non-released versions, e.g. `1.12-dev`. This parameter takes precedence over `version`.|
 | enterprise_dcos | REQUIRED | Specifies if the installer (given by `download`) installs an 'open' or 'enterprise' version of Mesosphere DC/OS. This is required as there are additional post-upgrade checks for enterprise-only components.|
 | selinux_mode | REQUIRED | Indicates the cluster nodes operating sytems SELinux mode. Mesosphere DC/OS supports running in `enforcing` mode starting with **1.12**. Older versions require `permissive`.|
+| only_config_update | no | Specifies true if you only update DC/OS config,  use same version to upgrade and make the new config available. |
+| ip_detect_device | REQUIRED | Specifies the network device name for ip detect. |
 ||||
 | config | yes | Yaml structure that represents a valid Mesosphere DC/OS config.yml, see below.|
 
@@ -148,3 +150,4 @@ The provided `dcos.yml` playbook can be used as-is for installing and upgrading 
 ## Author Information
 
 This role was created by team SRE @ Mesosphere and others in 2018, based on multiple internal tools and non-public Ansible roles that have been developed internally over the years.
+
