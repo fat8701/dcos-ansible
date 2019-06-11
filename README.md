@@ -75,6 +75,8 @@ dcos:
   version_to_upgrade_from: "1.12.0-dev"
   enterprise_dcos: false
   selinux_mode: enforcing
+  ip_detect_device: eth0
+  only_config_update: true
 
   config:
     cluster_name: "examplecluster"
